@@ -1,0 +1,26 @@
+
+----
+
+=======
+Teacher
+=======
+
+-> Student Attendance
+
+-> Student Fee (Amount + Status)
+
+----
+
+=====
+Admin
+=====
+
+-> Create Teacher Accounts
+
+-> Update Teacher Password
+
+----
+
+-> See Teachers Hired
+
+-> See total number of Students

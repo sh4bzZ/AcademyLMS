@@ -1,0 +1,4 @@
+.academyLMS
+app/__pycache__/
+app/dockerDB_stuff/
+app/env/

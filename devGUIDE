@@ -1,4 +1,3 @@
-
 # Download Docker
 sudo apt install -y docker.io
 
@@ -14,3 +13,12 @@ close and open it again :)
 # Start the mysql docker container
 docker run --name academy_database -d -p 3306:3306 -v /home/pika/developing_stuff/web/lms/app/dockerDB_stuff:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql
 
+------------------
+Database Structure
+------------------
+ 
+Student Table
+
+--------------------------------------------------------
+PK|Name|Age|ID|Class|Mfees|Pfees|Bfees|Cfees|Ufees|Qfees
+--------------------------------------------------------

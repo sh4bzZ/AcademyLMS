@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register Student</title>
+
+    <link rel="stylesheet" href="register-students.css">
+</head>
+
+<body>
+
+    <form action="/register-students" method="post">
+
+        <h1>Register Student</h1>
+
+        <!-- Student Information -->
+        <div class="student-info">
+
+            <div class="form-group">
+                <label for="name">Student Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="id">Student ID</label>
+                <input
+                    type="number"
+                    id="id"
+                    name="id"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="class">Class</label>
+                <input
+                    type="text"
+                    id="class"
+                    name="class"
+                >
+            </div>
+
+        </div>
+
+
+        <!-- Subjects -->
+        <div class="subjects">
+
+            <h2>Subjects</h2>
+
+            <div class="subject">
+                <input
+                    type="checkbox"
+                    id="math"
+                    name="math"
+                >
+                <label for="math">Math</label>
+
+                <input
+                    type="number"
+                    class="fee-amount"
+                    id="math_fees"
+                    name="math_fees"
+                    placeholder="Fee"
+                >
+            </div>
+
+
+            <div class="subject">
+                <input
+                    type="checkbox"
+                    id="physics"
+                    name="physics"
+                >
+                <label for="physics">Physics</label>
+
+                <input
+                    type="number"
+                    class="fee-amount"
+                    id="physics_fees"
+                    name="physics_fees"
+                    placeholder="Fee"
+                >
+            </div>
+
+
+            <div class="subject">
+                <input
+                    type="checkbox"
+                    id="english"
+                    name="english"
+                >
+                <label for="english">English</label>
+
+                <input
+                    type="number"
+                    class="fee-amount"
+                    id="english_fees"
+                    name="english_fees"
+                    placeholder="Fee"
+                >
+            </div>
+
+
+            <div class="subject">
+                <input
+                    type="checkbox"
+                    id="bio"
+                    name="bio"
+                >
+                <label for="bio">Biology</label>
+
+                <input
+                    type="number"
+                    class="fee-amount"
+                    id="bio_fees"
+                    name="bio_fees"
+                    placeholder="Fee"
+                >
+            </div>
+
+
+            <div class="subject">
+                <input
+                    type="checkbox"
+                    id="chemistry"
+                    name="chemistry"
+                >
+                <label for="chemistry">Chemistry</label>
+
+                <input
+                    type="number"
+                    class="fee-amount"
+                    id="chemistry_fees"
+                    name="chemistry_fees"
+                    placeholder="Fee"
+                >
+            </div>
+
+
+            <div class="subject">
+                <input
+                    type="checkbox"
+                    id="urdu"
+                    name="urdu"
+                >
+                <label for="urdu">Urdu</label>
+
+                <input
+                    type="number"
+                    class="fee-amount"
+                    id="urdu_fees"
+                    name="urdu_fees"
+                    placeholder="Fee"
+                >
+            </div>
+
+
+            <div class="subject">
+                <input
+                    type="checkbox"
+                    id="quran"
+                    name="quran"
+                >
+                <label for="quran">Quran</label>
+
+                <input
+                    type="number"
+                    class="fee-amount"
+                    id="quran_fees"
+                    name="quran_fees"
+                    placeholder="Fee"
+                >
+            </div>
+
+        </div>
+
+        <button type="submit">Register Student</button>
+
+    </form>
+
+</body>
+</html>

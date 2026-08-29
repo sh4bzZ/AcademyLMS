@@ -43,4 +43,5 @@ function registerStudent(
         );
     });
 }
+
 module.exports = registerStudent;

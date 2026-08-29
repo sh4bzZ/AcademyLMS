@@ -13,12 +13,49 @@ close and open it again :)
 # Start the mysql docker container
 docker run --name academy_database -d -p 3306:3306 -v /home/pika/developing_stuff/web/lms/app/dockerDB_stuff:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql
 
-------------------
-Database Structure
-------------------
+#------------------
+#Database Structure
+#------------------
  
-Student Table
+# Student Table
 
---------------------------------------------------------
-PK|Name|Age|ID|Class|Mfees|Pfees|Bfees|Cfees|Ufees|Qfees
---------------------------------------------------------
+---------------------------------------------------------------------------------
+PK|name|age|id|class|Mathfees|Phyfees|Biofees|Chemfees|Urdufees|Quranfees|Engfees
+---------------------------------------------------------------------------------
+
+
+
+
+#-----------------------
+# Database Configuration
+#-----------------------
+# Creating database user
+create user 'academyUser'@'localhost' identified by 'academyPass';
+
+# Creating database
+create database academyDatabase;
+
+# Creating table on academyDatabase
+use academyDatabase;
+
+CREATE TABLE students (
+    name VARCHAR(255),
+    age INT,
+    id VARCHAR(30),
+    class VARCHAR(100),
+    Mathfees INT,
+    Phyfees INT,
+    Biofees INT,
+    Chemfees INT,
+    Urdufees INT,
+    Quranfees INT
+);
+
+# Grant Privileges to user on the database
+GRANT INSERT, SELECT, DELETE ON academyDatabase.* TO 'academyUser'@'localhost';
+
+flush privileges;
+
+# Add English Column
+ALTER TABLE students
+ADD COLUMN Engfees INT;

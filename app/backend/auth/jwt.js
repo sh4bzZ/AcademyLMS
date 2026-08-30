@@ -1,19 +1,41 @@
 const fs = require('fs');
 const jwt = require('jsonwebtoken');
 
-function authenticateUser(email, admin=false) {
+
+//read the secret key once
+const secretKey = fs.readFileSync('./env/jwtKey.txt', 'utf8');
+
+// It doesn't have to be email, it can be name or anything...
+function assignJWT(email, admin=false) {
    console.log('creating the JWT token now')
-   const secretKey = fs.readFileSync('./env/jwtKey.txt','utf8')
    const payload={email, admin}
    const token = jwt.sign(payload, secretKey, {
    expiresIn: '1h'
    });
-   console.log(token);
+   console.log(`Debug: JWT token created for ${email} and admin is ${admin}`)
    return token;
 };
 
+
+// MIDDLE WARE FUNCTION
+function validateSession(req, res, next){
+   const token = req.cookies.token;
+   if(!token){
+      return res.redirect('/login.html')
+   }
+   
+   if(checkIntegrity(token)){
+      next();
+   }
+   else{
+      return res.redirect('/login.html')
+   }
+}
+
+//--------------------
+
+
 function checkIntegrity(token){
-   const secretKey = fs.readFileSync('./env/jwtKey.txt','utf8')
    try {
       const decoded = jwt.verify(token, secretKey);
       console.log("Token is valid. Decoded payload:", decoded);
@@ -25,7 +47,6 @@ function checkIntegrity(token){
 }
 
 function checkIntegrityAdmin(token) {
-   const secretKey = fs.readFileSync('./env/jwtKey.txt', 'utf8');
    try {
       const decoded = jwt.verify(token, secretKey);
       if (!decoded.admin) {
@@ -39,7 +60,19 @@ function checkIntegrityAdmin(token) {
    }
 }
 
+function setJWTCookie(res, token) {
+    res.cookie('token', token, {
+        httpOnly: true,
+        sameSite: 'strict'
+    });
+    console.log(`Debug: setting cookie ${token}`)
+}
+
 
 module.exports = {
-   authenticateUser, checkIntegrity
+   assignJWT,
+   checkIntegrity,
+   checkIntegrityAdmin,
+   validateSession,
+   setJWTCookie
 };

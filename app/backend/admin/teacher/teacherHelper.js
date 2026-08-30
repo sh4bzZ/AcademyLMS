@@ -35,4 +35,33 @@ function createTeacherAccount(
     });
 }
 
-module.exports = { createTeacherAccount }
+
+function updateTeacherPassword(
+    email,
+    newPassword
+) {
+    const connection = dbConnector.connectToDatabase();
+
+    return new Promise((resolve, reject) => {
+        connection.query(
+            `UPDATE teachers
+             SET password = ?
+             WHERE email = ?`,
+            [
+                newPassword,
+                email
+            ],
+            function(err, result) {
+                if (err) {
+                    console.error("Error updating password:", err.message);
+                    reject(err);
+                } else {
+                    console.log("Password updated successfully:", result);
+                    resolve(result);
+                }
+            }
+        );
+    });
+}
+
+module.exports = { createTeacherAccount. updateTeacherPassword }

@@ -3,17 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <form action="/login" method="post">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
 
-        <label for="pwd">Password:</label><br>
-        <input type="password" id="pwd" name="pass"><br><br>
-        
-        <input type="submit" value="Submit">
-    </form>
+    <title>Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <main class="page">
+        <section class="login-card">
+
+            <div class="header">
+                <div class="icon">→</div>
+
+                <h1>Welcome Back</h1>
+                <p>Sign in to your academy account.</p>
+            </div>
+
+            <form action="/login" method="post">
+
+                <div class="form-group">
+                    <label for="name">Username</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your username"
+                        autocomplete="username"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    Sign In
+                </button>
+
+            </form>
+
+        </section>
+    </main>
+
 </body>
 </html>

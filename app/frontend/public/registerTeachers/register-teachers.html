@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register Teacher</title>
+
+    <link rel="stylesheet" href="register-teachers.css">
+</head>
+
+<body>
+
+    <main class="page">
+        <section class="register-card">
+
+            <div class="header">
+                <div class="icon">+</div>
+
+                <h1>Register Teacher</h1>
+                <p>Create a new teacher account for your academy.</p>
+            </div>
+
+            <form action="/register-teachers" method="post">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="id">Teacher ID</label>
+                        <input
+                            type="number"
+                            id="id"
+                            name="id"
+                            placeholder="Enter ID"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="teacher@example.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="number"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter phone number"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create password"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="salary">Salary</label>
+                        <input
+                            type="number"
+                            id="salary"
+                            name="salary"
+                            placeholder="Enter salary"
+                            min="0"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <button type="submit">
+                    Create Teacher Account
+                </button>
+
+            </form>
+
+        </section>
+    </main>
+
+</body>
+</html>

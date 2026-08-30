@@ -44,4 +44,4 @@ function registerStudent(
     });
 }
 
-module.exports = registerStudent;
+module.exports = { registerStudent };

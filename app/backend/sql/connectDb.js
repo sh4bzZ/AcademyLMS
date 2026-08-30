@@ -1,4 +1,3 @@
-const express=require('express');
 const mysql = require('mysql');
 
 function connectToDatabase(
@@ -22,8 +21,6 @@ function connectToDatabase(
 
       console.log("Connected to MySQL!");
    });
-
    return con;
 }
-
-module.exports = connectToDatabase;
+module.exports = {connectToDatabase};

@@ -1,4 +1,4 @@
-const dbConnector = require("../sql/connectDb.js") 
+const dbConnector = require("../../sql/connectDb.js") 
 
 function authenticateTeacher(name, password) {
     const connection = dbConnector.connectToDatabase();

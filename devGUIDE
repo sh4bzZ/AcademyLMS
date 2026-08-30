@@ -19,9 +19,9 @@ docker run --name academy_database -d -p 3306:3306 -v /home/pika/developing_stuf
  
 # Student Table
 
----------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 |name|age|id|class|Mathfees|Phyfees|Biofees|Chemfees|Urdufees|Quranfees|Engfees
----------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 #-----------------------
 # Database Configuration
@@ -72,4 +72,24 @@ CREATE TABLE teachers (
     Salary INT
 );
 
-# Admin Table
+# Attendance table
+------------------
+Student Names....|
+------------------
+
+CREATE TABLE attendance (
+    student_id VARCHAR(30) NOT NULL,
+    student_name VARCHAR(255) NOT NULL,
+    attendance BOOLEAN NOT NULL,
+    date DATE NOT NULL 
+);
+
+
+------------
+npm install mysql
+
+npm install express
+
+npm install jsonwebtoken
+
+npm install cookie-parser

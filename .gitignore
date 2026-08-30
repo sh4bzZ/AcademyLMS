@@ -2,3 +2,4 @@
 app/__pycache__/
 app/dockerDB_stuff/
 app/env/
+node_modules/

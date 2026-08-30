@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/sh4bzZ/AcademyLMS/issues"
   },
-  "homepage": "https://github.com/sh4bzZ/AcademyLMS#readme"
+  "homepage": "https://github.com/sh4bzZ/AcademyLMS#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mysql": "^2.18.1"
+  }
 }

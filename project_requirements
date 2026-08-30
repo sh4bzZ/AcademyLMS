@@ -7,9 +7,7 @@ Teacher
 
 -> Teacher Login ✅
 
--> Student Attendance
-
--> Student Fee (Amount + Status)
+-> Student Attendance ✅
 
 -> Register Student ✅
 
@@ -19,12 +17,8 @@ Teacher
 Admin
 =====
 
--> Create Teacher Accounts
+-> Create Teacher Accounts ✅
 
--> Update Teacher Password
+-> Update Teacher Password ✅
 
 ----
-
--> See Teachers Hired
-
--> See total number of Students

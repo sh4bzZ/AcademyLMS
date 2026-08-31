@@ -3,10 +3,14 @@ const app = express();
 const login = require('./backend/routes/login.js')
 const sessionManager = require('./backend/auth/jwt.js')
 
+const path = require('path');
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static('frontend/public'));
+app.use(express.static(
+    path.join(__dirname, 'frontend', 'public')
+));
 
 app.use('/login', login.routes);
 
@@ -14,6 +18,7 @@ app.use('/login', login.routes);
 app.use(sessionManager.validateSession);
 
 app.use((req, res) => {
+    console.log("404 Request:", req.path);  
     res.status(404).send('404 - Page Not Found');
 });
 

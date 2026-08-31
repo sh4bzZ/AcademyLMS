@@ -19,16 +19,16 @@ function assignJWT(email, admin=false) {
 
 // MIDDLE WARE FUNCTION
 function validateSession(req, res, next){
-   const token = req.cookies.token;
+   const token = req.cookies?.token;
    if(!token){
-      return res.redirect('/login.html')
+      return res.redirect('/login/login.html')
    }
    
    if(checkIntegrity(token)){
       next();
    }
    else{
-      return res.redirect('/login.html')
+      return res.redirect('/login/login.html')
    }
 }
 

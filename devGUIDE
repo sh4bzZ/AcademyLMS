@@ -93,3 +93,31 @@ npm install express
 npm install jsonwebtoken
 
 npm install cookie-parser
+
+------------
+
+## Test Account
+
+INSERT INTO teachers (name, password, id, email, PhoneNumber, Salary)
+VALUES (
+    'test',
+    'test',
+    '123',
+    'test@test.com',
+    '123',
+    123
+);
+
+-----------
+
+npm uninstall mysql
+npm install mysql2
+
+-----------
+
+create second account, cause mysql recognizes user with same name, coming from a different IP as different user
+
+CREATE USER 'academyUser'@'172.17.0.1'
+IDENTIFIED BY 'academyPass';
+
+GRANT INSERT, SELECT, DELETE ON academyDatabase.* TO 'academyUser'@'172.17.0.1';

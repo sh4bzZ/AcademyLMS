@@ -12,12 +12,12 @@ routes.post('/', async (req, res)=>{
             // Give JWT here
             const assignedJWT = jwt.assignJWT(name, false);
             jwt.setJWTCookie(res, assignedJWT);
-            res.redirect('/dashboard.html')
+            res.redirect('/dashboard/dashboard.html')
         } else {
             res.status(401).send(`
                 <script>
                     alert("Invalid username or password");
-                    window.location.href = "/login.html";
+                    window.location.href = "/login/login.html";
                 </script>
                 `);
         }

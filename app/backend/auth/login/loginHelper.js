@@ -26,4 +26,29 @@ function authenticateTeacher(name, password) {
     });
 }
 
-module.exports = {authenticateTeacher}
+function authenticateAdmin(name, id, password){
+    const connection = dbConnector.connectToDatabase();
+    const query = `
+        SELECT name, id, password
+        FROM admin
+        WHERE name = ? AND id = ? AND password = ?
+    `;
+    const values = [name, id, password];
+     connection.query(query, values, function(err, result) {
+            if (err) {
+                console.error("Error fetching data:", err.message);
+                connection.end();
+                reject(err);
+            } else if (result.length === 1) {
+                console.log("Admin found:", result);
+                connection.end();
+                resolve(true);
+            } else {
+                connection.end();
+                resolve(false);
+            }
+        });
+}
+
+
+module.exports = {authenticateTeacher, authenticateAdmin}

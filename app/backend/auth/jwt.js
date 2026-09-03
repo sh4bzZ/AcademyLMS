@@ -32,6 +32,18 @@ function validateSession(req, res, next){
    }
 }
 
+function validateAdminSession(req, res, next){
+   if(!token){
+      return res.redirect('/login/admin-login.html')
+   }
+   if(checkIntegrityAdmin(token)){
+      next();
+   }
+   else{
+      return res.redirect('/login/admin-login.html')
+   }
+}
+
 //--------------------
 
 
@@ -74,5 +86,6 @@ module.exports = {
    checkIntegrity,
    checkIntegrityAdmin,
    validateSession,
+   validateAdminSession,
    setJWTCookie
 };

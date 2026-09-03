@@ -27,6 +27,8 @@ app.use(sessionManager.validateSession);
 app.use('/register-students', studentRegisteration.routes);
 
 //  Admin authenticated routes below
+app.use(sessionManager.validateAdminSession);
+
 app.use('/register-teachers', teacherRegisteration.routes);
 
 app.use((req, res) => {
@@ -34,6 +36,6 @@ app.use((req, res) => {
     res.status(404).send('404 - Page Not Found');
 });
 
-app.listen(8081, '172.19.8.219', () => {
+app.listen(8081, '0.0.0.0', () => {
     console.log("Server started on port 8081");
 });

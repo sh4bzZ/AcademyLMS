@@ -3,22 +3,21 @@ const routes = express.Router();
 const auth = require('../auth/login/loginHelper.js')
 const jwt = require('../auth/jwt.js')
 
-// NORMAL USER LOGIN
 routes.post('/', async (req, res)=>{
     const name = req.body.name;
+    const id = req.body.id;
     const password = req.body.password
     try {
-        const authenticated = await auth.authenticateTeacher(name, password);
+        const authenticated = await auth.authenticateAdmin(name, id, password);
         if(authenticated){
-            // Give JWT here
-            const assignedJWT = jwt.assignJWT(name, false);
+            const assignedJWT = jwt.assignJWT(name, true);
             jwt.setJWTCookie(res, assignedJWT);
-            res.redirect('/dashboard/dashboard.html')
+            res.redirect('/dashboard/admin-dashboard.html')
         } else {
             res.status(401).send(`
                 <script>
                     alert("Invalid username or password");
-                    window.location.href = "/login/login.html";
+                    window.location.href = "/adminLogin/admin-login.html";
                 </script>
                 `);
         }
@@ -28,7 +27,5 @@ routes.post('/', async (req, res)=>{
         res.status(500).send('Server error')
     }
 });
-
-
 
 module.exports={routes};

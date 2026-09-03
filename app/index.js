@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const login = require('./backend/routes/login.js');
+const adminLogin = require('./backend/routes/admin-login.js');
 const studentRegisteration = require('./backend/routes/register-students.js');
 const teacherRegisteration = require('./backend/routes/register-teachers.js');
 const sessionManager = require('./backend/auth/jwt.js');
@@ -19,11 +20,13 @@ app.use(express.static(
 
 app.use(cookieParser());
 
+// Unauthenticated routes below
 app.use('/login', login.routes);
+app.use('/admin-login', adminLogin.routes);
 
 // Authenticated routes below
 app.use('/register-students',
-    sessionManager.validateSession
+    sessionManager.validateSession,
     studentRegisteration.routes
 );
 

@@ -26,15 +26,17 @@ function authenticateTeacher(name, password) {
     });
 }
 
-function authenticateAdmin(name, id, password){
-    const connection = dbConnector.connectToDatabase();
-    const query = `
-        SELECT name, id, password
-        FROM admin
-        WHERE name = ? AND id = ? AND password = ?
-    `;
-    const values = [name, id, password];
-     connection.query(query, values, function(err, result) {
+function authenticateAdmin(name, id, password) {
+    return new Promise((resolve, reject) => {
+        const connection = dbConnector.connectToDatabase();
+
+        const query = `
+            SELECT name, id, password
+            FROM admin
+            WHERE name = ? AND id = ? AND password = ?
+        `;
+        const values = [name, id, password];
+        connection.query(query, values, function(err, result) {
             if (err) {
                 console.error("Error fetching data:", err.message);
                 connection.end();
@@ -48,7 +50,7 @@ function authenticateAdmin(name, id, password){
                 resolve(false);
             }
         });
+    });
 }
-
 
 module.exports = {authenticateTeacher, authenticateAdmin}

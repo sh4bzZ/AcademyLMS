@@ -121,3 +121,19 @@ CREATE USER 'academyUser'@'172.17.0.1'
 IDENTIFIED BY 'academyPass';
 
 GRANT INSERT, SELECT, DELETE ON academyDatabase.* TO 'academyUser'@'172.17.0.1';
+
+-----------
+
+# Admin Table
+________________
+name|id|password
+----------------
+
+CREATE TABLE admin (
+name VARCHAR(255) NOT NULL,
+id INT NOT NULL,
+password VARCHAR(255) NOT NULL
+)
+
+# Creating entry on the Admin Table for testing purposes
+INSERT INTO admin (name, id, password) VALUES (testadmin, 1, testpassword)

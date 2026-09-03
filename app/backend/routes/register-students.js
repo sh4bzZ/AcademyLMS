@@ -4,17 +4,17 @@ const registeration = require('../../backend/students/registeration/registerHelp
 
 routes.post('/', async (req, res)=> {
     // Student Details
-    const name = req.body.name;
-    const age = req.body.age;
-    const id = req.body.id;
-    const classGrade = req.body.class;
-    const math_fees = req.body.math_fees;
-    const physics_fees = req.body.physics_fees;
-    const english_fees = req.body.english_fees;
-    const bio_fees = req.body.bio_fees;
-    const chemistry_fees = req.body.chemistry_fees;
-    const urdu_fees = req.body.urdu_fees;
-    const quran_fees = req.body.quran_fees;
+    const name = req.body.name || "";
+    const age = req.body.age || 0;
+    const id = req.body.id || "";
+    const classGrade = req.body.class || "";
+    const math_fees = req.body.math_fees || 0;
+    const physics_fees = req.body.physics_fees || 0;
+    const english_fees = req.body.english_fees || 0;
+    const bio_fees = req.body.bio_fees || 0;
+    const chemistry_fees = req.body.chemistry_fees || 0;
+    const urdu_fees = req.body.urdu_fees || 0;
+    const quran_fees = req.body.quran_fees || 0;
 
     try {
         const result = await registeration.registerStudent(

@@ -64,4 +64,4 @@ function updateTeacherPassword(
     });
 }
 
-module.exports = { createTeacherAccount. updateTeacherPassword }
+module.exports = { createTeacherAccount, updateTeacherPassword }

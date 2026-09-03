@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const login = require('./backend/routes/login.js');
 const studentRegisteration = require('./backend/routes/register-students.js');
+const teacherRegisteration = require('./backend/routes/register-teachers.js');
 const sessionManager = require('./backend/auth/jwt.js');
 
 const cookieParser = require('cookie-parser');
@@ -24,6 +25,9 @@ app.use('/login', login.routes);
 app.use(sessionManager.validateSession);
 
 app.use('/register-students', studentRegisteration.routes);
+
+//  Admin authenticated routes below
+app.use('/register-teachers', teacherRegisteration.routes);
 
 app.use((req, res) => {
     console.log("404 Request:", req.path);  

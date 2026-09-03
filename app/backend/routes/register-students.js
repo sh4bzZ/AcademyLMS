@@ -25,15 +25,15 @@ routes.post('/', async (req, res)=> {
             chemistry_fees, urdu_fees,
             quran_fees 
         )
-        if(result.affectedRows === 1){
+
+        if (result.affectedRows === 1){
             res.status(200).send(`
                 <script>
                     alert("Registered Student Successfully");
                     window.location.href = "/registerStudents/register-students.html";
                 </script>
             `);
-        }
-        else{
+        } else {
             res.status(500).send(`
                 <script>
                     alert("Unknown Error Occured, Please contact the developer");

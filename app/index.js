@@ -22,14 +22,16 @@ app.use(cookieParser());
 app.use('/login', login.routes);
 
 // Authenticated routes below
-app.use(sessionManager.validateSession);
-
-app.use('/register-students', studentRegisteration.routes);
+app.use('/register-students',
+    sessionManager.validateSession
+    studentRegisteration.routes
+);
 
 //  Admin authenticated routes below
-app.use(sessionManager.validateAdminSession);
-
-app.use('/register-teachers', teacherRegisteration.routes);
+app.use('/register-teachers', 
+    sessionManager.validateAdminSession,
+    teacherRegisteration.routes
+);
 
 app.use((req, res) => {
     console.log("404 Request:", req.path);  

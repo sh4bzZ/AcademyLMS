@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Back</title>
+    <link rel="stylesheet" href="admin-login.css">
+</head>
+<body>
+    <main class="login-card">
+        <div class="icon" aria-hidden="true">→</div>
+
+        <h1>Welcome Back</h1>
+        <p class="subtitle">Sign in to your academy account.</p>
+
+        <form action="/admin-login" method="post">
+            <label for="name">Username</label>
+            <input id="name" type="text" name="name" placeholder="Enter your username" autocomplete="username">
+
+            <label for="id">ID</label>
+            <input id="id" type="number" name="id" placeholder="Enter your ID">
+
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" placeholder="Enter your password" autocomplete="current-password">
+
+            <button type="submit">Sign In</button>
+        </form>
+    </main>
+</body>
+</html>

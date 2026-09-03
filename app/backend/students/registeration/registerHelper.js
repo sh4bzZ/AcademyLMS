@@ -1,4 +1,4 @@
-const dbConnector = require("../sql/connectDb.js") 
+const dbConnector = require("../../sql/connectDb.js") 
 
 function registerStudent(
     name, age, id, className,
@@ -34,9 +34,11 @@ function registerStudent(
             function(err, result) {
                 if (err) {
                     console.error("Error inserting data:", err.message);
+                    connection.end()
                     reject(err);
                 } else {
                     console.log("Insertion successful:", result);
+                    connection.end()
                     resolve(result);
                 }
             }

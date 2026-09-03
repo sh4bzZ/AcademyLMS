@@ -12,11 +12,14 @@ function authenticateTeacher(name, password) {
         connection.query(query, values, function(err, result) {
             if (err) {
                 console.error("Error fetching data:", err.message);
+                connection.end();
                 reject(err);
             } else if (result.length === 1) {
                 console.log("Teacher found:", result);
+                connection.end();
                 resolve(true);
             } else {
+                connection.end();
                 resolve(false);
             }
         });

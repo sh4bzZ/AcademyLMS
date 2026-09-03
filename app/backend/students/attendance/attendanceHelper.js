@@ -1,4 +1,13 @@
-const dbConnector = require("../../sql/connectDb.js") 
+const dbConnector = require("../../sql/connectDb.js")
+
+
+function fetchStudentData(){
+    
+}
+
+
+
+
 function markAttendance(
     student_id,
     student_name,
@@ -20,9 +29,11 @@ function markAttendance(
             function(err, result) {
                 if (err) {
                     console.error("Error inserting data:", err.message);
+                    connection.end();
                     reject(err);
                 } else {
                     console.log("Insertion successful:", result);
+                    connection.end();
                     resolve(result);
                 }
             }

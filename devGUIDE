@@ -137,3 +137,7 @@ password VARCHAR(255) NOT NULL
 
 # Creating entry on the Admin Table for testing purposes
 INSERT INTO admin (name, id, password) VALUES (testadmin, 1, testpassword)
+
+# Adding class column in attendance table
+ALTER TABLE attendance
+ADD COLUMN class_name VARCHAR(100) NOT NULL;

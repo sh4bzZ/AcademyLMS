@@ -1,7 +1,85 @@
-<html>
-	<body>
-		Welcome to dashboard teacher
-		<a href="/registerStudents/register-students.html">Register Students</a>
-		<a href="/attendance/attendance.html">Mark Attendance</a>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Dashboard</title>
+
+    <!-- + Add: Link the dashboard stylesheet -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- + Add: Main dashboard container -->
+    <main class="dashboard">
+
+        <!-- + Add: Dashboard header -->
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">Teacher Portal</p>
+                <h1>Welcome to your Dashboard</h1>
+                <p class="subtitle">
+                    Manage your students and attendance from one place.
+                </p>
+            </div>
+        </header>
+
+
+        <!-- + Add: Dashboard action cards -->
+        <section class="dashboard-grid">
+
+            <!-- + Add: Register students card -->
+            <a
+                href="/registerStudents/register-students.html"
+                class="dashboard-card"
+            >
+                <div class="card-icon">
+                    👨‍🎓
+                </div>
+
+                <div class="card-content">
+                    <h2>Register Students</h2>
+
+                    <p>
+                        Add and manage students in your classes.
+                    </p>
+
+                    <span class="card-link">
+                        Register Students →
+                    </span>
+                </div>
+            </a>
+
+
+            <!-- + Add: Attendance card -->
+            <a
+                href="/attendance/attendance.html"
+                class="dashboard-card"
+            >
+                <div class="card-icon">
+                    ✓
+                </div>
+
+                <div class="card-content">
+                    <h2>Mark Attendance</h2>
+
+                    <p>
+                        Record today's attendance for your students.
+                    </p>
+
+                    <span class="card-link">
+                        Mark Attendance →
+                    </span>
+                </div>
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+
 </html>

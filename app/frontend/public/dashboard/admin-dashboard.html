@@ -1,6 +1,110 @@
-<html>
-	<body>
-		Welcome Admin!<br>
-		<a href="/registerTeachers/register-teachers.html">Register Teachers</a>
-	<body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <!-- + Add: Link the admin dashboard stylesheet -->
+    <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+
+<body>
+
+    <!-- + Add: Main dashboard container -->
+    <main class="dashboard">
+
+        <!-- + Add: Dashboard header -->
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">Administration Portal</p>
+
+                <h1>Welcome, Admin!</h1>
+
+                <p class="subtitle">
+                    Manage students, teachers, and attendance from one place.
+                </p>
+            </div>
+        </header>
+
+
+        <!-- + Add: Dashboard action cards -->
+        <section class="dashboard-grid">
+
+            <!-- + Add: Register students card -->
+            <a
+                href="/registerStudents/register-students.html"
+                class="dashboard-card"
+            >
+                <div class="card-icon">
+                    👨‍🎓
+                </div>
+
+                <div class="card-content">
+                    <h2>Register Students</h2>
+
+                    <p>
+                        Add and manage students in the system.
+                    </p>
+
+                    <span class="card-link">
+                        Register Students →
+                    </span>
+                </div>
+            </a>
+
+
+            <!-- + Add: Register teachers card -->
+            <a
+                href="/registerTeachers/register-teachers.html"
+                class="dashboard-card"
+            >
+                <div class="card-icon">
+                    👨‍🏫
+                </div>
+
+                <div class="card-content">
+                    <h2>Register Teachers</h2>
+
+                    <p>
+                        Add and manage teachers and their accounts.
+                    </p>
+
+                    <span class="card-link">
+                        Register Teachers →
+                    </span>
+                </div>
+            </a>
+
+
+            <!-- + Add: Attendance card -->
+            <a
+                href="/attendance/attendance.html"
+                class="dashboard-card"
+            >
+                <div class="card-icon">
+                    ✓
+                </div>
+
+                <div class="card-content">
+                    <h2>Mark Attendance</h2>
+
+                    <p>
+                        Record and manage student attendance.
+                    </p>
+
+                    <span class="card-link">
+                        Mark Attendance →
+                    </span>
+                </div>
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+
 </html>

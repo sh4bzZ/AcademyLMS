@@ -5,7 +5,7 @@ function fetchAttendanceData(class_name) {
 
     return new Promise((resolve, reject) => {
         connection.query(
-            `SELECT student_id, student_name FROM attendance WHERE class_name = ?`,
+            `SELECT DISTINCT student_id, student_name FROM attendance WHERE class_name = ?`,
             [class_name],
             function (err, result) {
                 if (err) {

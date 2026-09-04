@@ -1,0 +1,500 @@
+/* + Add: Reset default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* + Add: Page styling */
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #f8fafc
+        );
+
+    color: #111827;
+
+    padding: 40px 20px;
+}
+
+
+/* + Add: Main page container */
+.page-container {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+/* + Add: Page header */
+.page-header {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+
+/* + Add: Header icon */
+.header-icon {
+    width: 64px;
+    height: 64px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 10px 30px rgba(
+            15,
+            23,
+            42,
+            0.08
+        );
+}
+
+
+/* + Add: Small section label */
+.eyebrow {
+    margin-bottom: 6px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    color: #6366f1;
+}
+
+
+/* + Add: Main heading */
+h1 {
+    font-size: 32px;
+
+    line-height: 1.2;
+
+    margin-bottom: 8px;
+}
+
+
+/* + Add: Header subtitle */
+.subtitle {
+    color: #6b7280;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* + Add: Filter card */
+.filter-card {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    padding: 26px;
+
+    margin-bottom: 24px;
+
+    box-shadow:
+        0 12px 35px rgba(
+            15,
+            23,
+            42,
+            0.08
+        );
+}
+
+
+/* + Add: Form layout */
+#attendanceForm {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        auto;
+
+    align-items: end;
+
+    gap: 18px;
+}
+
+
+/* + Add: Form group */
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* + Add: Labels */
+label {
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+
+/* + Add: Inputs */
+input {
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 13px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    background: #f9fafb;
+
+    color: #111827;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* + Add: Input focus */
+input:focus {
+    border-color: #6366f1;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            99,
+            102,
+            241,
+            0.12
+        );
+}
+
+
+/* + Add: Submit button */
+button {
+    height: 46px;
+
+    padding: 0 22px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #4f46e5;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* + Add: Button hover */
+button:hover {
+    background: #4338ca;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            79,
+            70,
+            229,
+            0.25
+        );
+}
+
+
+/* + Add: Disabled button */
+button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* + Add: Status message */
+.status-message {
+    padding: 14px 16px;
+
+    margin-bottom: 24px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    color: #374151;
+
+    font-size: 14px;
+}
+
+
+/* + Add: Attendance results section */
+.attendance-section {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    padding: 26px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(
+            15,
+            23,
+            42,
+            0.08
+        );
+}
+
+
+/* + Add: Results section header */
+.section-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+}
+
+
+/* + Add: Results heading */
+h2 {
+    font-size: 22px;
+}
+
+
+/* + Add: Record count */
+.record-count {
+    padding: 8px 12px;
+
+    border-radius: 20px;
+
+    background: #eef2ff;
+
+    color: #4f46e5;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* + Add: Responsive table wrapper */
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+}
+
+
+/* + Add: Table */
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 750px;
+}
+
+
+/* + Add: Table header */
+thead {
+    background: #f8fafc;
+}
+
+
+/* + Add: Table cells */
+th,
+td {
+    padding: 15px 16px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    font-size: 14px;
+}
+
+
+/* + Add: Table headings */
+th {
+    color: #374151;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+
+    font-weight: 700;
+}
+
+
+/* + Add: Table data */
+td {
+    color: #4b5563;
+}
+
+
+/* + Add: Remove border from last row */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* + Add: Table row hover */
+tbody tr:hover {
+    background: #f9fafb;
+}
+
+
+/* + Add: Attendance badge */
+.attendance-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* + Add: Present badge */
+.attendance-present {
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+
+/* + Add: Absent badge */
+.attendance-absent {
+    background: #fee2e2;
+
+    color: #991b1b;
+}
+
+
+/* + Add: Empty table message */
+.empty-message {
+    padding: 35px;
+
+    text-align: center;
+
+    color: #6b7280;
+}
+
+
+/* + Add: Mobile layout */
+@media (max-width: 750px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    #attendanceForm {
+        grid-template-columns: 1fr;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .filter-card,
+    .attendance-section {
+        padding: 20px;
+    }
+
+    .section-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+}

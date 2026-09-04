@@ -157,3 +157,23 @@ button:active {
         font-size: 24px;
     }
 }
+
+.admin-login {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.admin-login p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.admin-login a {
+    margin-left: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.admin-login a:hover {
+    text-decoration: underline;
+}

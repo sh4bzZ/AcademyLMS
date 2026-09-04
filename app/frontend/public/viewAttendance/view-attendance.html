@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>View Attendance</title>
+
+    <!-- + Add: Link the attendance page stylesheet -->
+    <link rel="stylesheet" href="view-attendance.css">
+</head>
+
+<body>
+
+    <!-- + Add: Main page container -->
+    <main class="page-container">
+
+        <!-- + Add: Page header -->
+        <header class="page-header">
+
+            <div class="header-icon">
+                📋
+            </div>
+
+            <div>
+                <p class="eyebrow">
+                    Attendance Management
+                </p>
+
+                <h1>
+                    View Attendance
+                </h1>
+
+                <p class="subtitle">
+                    Select a date and class to view attendance records.
+                </p>
+            </div>
+
+        </header>
+
+
+        <!-- + Add: Search/filter card -->
+        <section class="filter-card">
+
+            <form id="attendanceForm">
+
+                <!-- + Add: Date field -->
+                <div class="form-group">
+
+                    <label for="date">
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- + Add: Class name field -->
+                <div class="form-group">
+
+                    <label for="class_name">
+                        Class
+                    </label>
+
+                    <input
+                        type="text"
+                        id="class_name"
+                        name="class_name"
+                        placeholder="Enter class name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- + Add: Submit button -->
+                <button
+                    type="submit"
+                    id="viewAttendanceButton"
+                >
+                    View Attendance
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- + Add: Status message -->
+        <div
+            id="statusMessage"
+            class="status-message"
+            hidden
+        ></div>
+
+
+        <!-- + Add: Attendance results section -->
+        <section
+            id="attendanceSection"
+            class="attendance-section"
+            hidden
+        >
+
+            <div class="section-header">
+
+                <div>
+                    <p class="eyebrow">
+                        Attendance Records
+                    </p>
+
+                    <h2 id="resultsTitle">
+                        Attendance
+                    </h2>
+                </div>
+
+                <div
+                    id="recordCount"
+                    class="record-count"
+                >
+                    0 Records
+                </div>
+
+            </div>
+
+
+            <!-- + Add: Responsive table container -->
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Student ID</th>
+                            <th>Student Name</th>
+                            <th>Attendance</th>
+                            <th>Date</th>
+                            <th>Class</th>
+                        </tr>
+                    </thead>
+
+                    <!-- + Add: Table body populated by JavaScript -->
+                    <tbody id="attendanceTableBody"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- + Add: Link attendance page JavaScript -->
+    <script src="view-attendance.js"></script>
+
+</body>
+
+</html>

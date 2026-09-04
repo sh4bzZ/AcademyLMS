@@ -8,6 +8,7 @@ const fetchAttendance = require('./backend/routes/fetch-attendance.js');
 const markAttendance = require('./backend/routes/mark-attendance.js');
 const viewStudents = require('./backend/routes/view-students.js');
 const viewTeachers = require('./backend/routes/view-teachers.js');
+const teacher = require('./backend/routes/update-tpassword.js');
 
 const sessionManager = require('./backend/auth/jwt.js');
 
@@ -62,6 +63,10 @@ app.use('/view-teachers',
     viewTeachers.routes
 )
 
+app.use('/update-tpassword',
+    sessionManager.validateAdminSession,
+    teacher.routes
+)
 
 app.use((req, res) => {
     console.log("404 Request:", req.path);  

@@ -25,8 +25,9 @@ const connection = dbConnector.connectToDatabase();
 
 
 function viewRegisteredTeachers(){
+    const connection = dbConnector.connectToDatabase();
     const query = `
-        SELECT *
+        SELECT name, id, email, PhoneNumber, Salary
         FROM teachers
     `;
     return new Promise((resolve, reject) => {
@@ -48,7 +49,7 @@ function viewRegisteredTeachers(){
 }
 
 function viewAttendanceByDate(date){
-
+    
 }
 
 module.exports = { viewRegisteredStudents, viewRegisteredTeachers, viewAttendanceByDate }; 

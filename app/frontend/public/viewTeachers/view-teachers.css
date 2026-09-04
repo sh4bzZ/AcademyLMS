@@ -1,0 +1,243 @@
+/* + Add: Reset browser defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* + Add: Page styling */
+body {
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: #f4f7fb;
+    color: #172033;
+}
+
+
+/* + Add: Main page container */
+.page-container {
+    width: min(1200px, 94%);
+
+    margin: 0 auto;
+
+    padding: 60px 0;
+}
+
+
+/* + Add: Page header */
+.page-header {
+    margin-bottom: 35px;
+}
+
+
+/* + Add: Small heading */
+.eyebrow {
+    margin-bottom: 10px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    color: #5269d9;
+}
+
+
+/* + Add: Main heading */
+.page-header h1 {
+    margin-bottom: 12px;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+
+    line-height: 1.15;
+}
+
+
+/* + Add: Page description */
+.subtitle {
+    color: #667085;
+
+    font-size: 1rem;
+
+    line-height: 1.6;
+}
+
+
+/* + Add: Teachers section */
+.teachers-section {
+    background: #ffffff;
+
+    border: 1px solid #e6eaf0;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(20, 30, 50, 0.05);
+
+    overflow: hidden;
+}
+
+
+/* + Add: Status message */
+.status-message {
+    padding: 30px;
+
+    text-align: center;
+
+    color: #667085;
+
+    font-size: 1rem;
+}
+
+
+/* + Add: Error status */
+.status-message.error {
+    color: #b42318;
+}
+
+
+/* + Add: Empty status */
+.status-message.empty {
+    color: #667085;
+}
+
+
+/* + Add: Table scrolling */
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* + Add: Teachers table */
+.teachers-table {
+    width: 100%;
+
+    min-width: 800px;
+
+    border-collapse: collapse;
+}
+
+
+/* + Add: Table header */
+.teachers-table thead {
+    background: #f8f9fc;
+}
+
+
+/* + Add: Table cells */
+.teachers-table th,
+.teachers-table td {
+    padding: 16px 20px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #e6eaf0;
+
+    white-space: nowrap;
+}
+
+
+/* + Add: Header cells */
+.teachers-table th {
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+
+    color: #667085;
+}
+
+
+/* + Add: Data cells */
+.teachers-table td {
+    font-size: 0.95rem;
+
+    color: #344054;
+}
+
+
+/* + Add: Row hover */
+.teachers-table tbody tr:hover {
+    background: #f8f9fc;
+}
+
+
+/* + Add: Teacher name */
+.teacher-name {
+    font-weight: 600;
+
+    color: #172033;
+}
+
+
+/* + Add: Teacher ID */
+.teacher-id {
+    font-family: monospace;
+
+    font-weight: 600;
+
+    color: #5269d9;
+}
+
+
+/* + Add: Email */
+.teacher-email {
+    color: #475467;
+}
+
+
+/* + Add: Phone number */
+.teacher-phone {
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* + Add: Salary */
+.teacher-salary {
+    font-weight: 600;
+
+    font-variant-numeric: tabular-nums;
+
+    color: #172033;
+}
+
+
+/* + Add: Mobile adjustments */
+@media (max-width: 700px) {
+
+    .page-container {
+        width: 94%;
+
+        padding: 40px 0;
+    }
+
+
+    .page-header {
+        margin-bottom: 25px;
+    }
+
+
+    .teachers-section {
+        border-radius: 14px;
+    }
+
+
+    .status-message {
+        padding: 25px 15px;
+    }
+
+}

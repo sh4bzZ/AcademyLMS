@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>View Teachers</title>
+
+    <!-- + Add: Link the page stylesheet -->
+    <link rel="stylesheet" href="view-teachers.css">
+</head>
+
+<body>
+
+    <!-- + Add: Main page container -->
+    <main class="page-container">
+
+        <!-- + Add: Page header -->
+        <header class="page-header">
+
+            <p class="eyebrow">
+                Teacher Management
+            </p>
+
+            <h1>
+                Teachers
+            </h1>
+
+            <p class="subtitle">
+                View all registered teachers and their information.
+            </p>
+
+        </header>
+
+
+        <!-- + Add: Teachers section -->
+        <section class="teachers-section">
+
+            <!-- + Add: Loading/status message -->
+            <div id="statusMessage" class="status-message">
+                Loading teachers...
+            </div>
+
+            <!-- + Add: Table container -->
+            <div
+                id="teachersTableContainer"
+                class="table-container"
+            ></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- + Add: Load teachers JavaScript -->
+    <script src="view-teachers.js"></script>
+
+</body>
+
+</html>

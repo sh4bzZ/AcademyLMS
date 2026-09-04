@@ -55,4 +55,4 @@ function markAttendance(
     });
 }
 
-module.exports = { fetchAttendanceData }
+module.exports = { fetchAttendanceData, markAttendance }

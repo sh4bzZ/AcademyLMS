@@ -1,12 +1,26 @@
 const dbConnector = require("../../sql/connectDb.js")
 
+function fetchAttendanceData(class_name) {
+    const connection = dbConnector.connectToDatabase();
 
-function fetchStudentData(){
-    
+    return new Promise((resolve, reject) => {
+        connection.query(
+            `SELECT student_id, student_name FROM attendance WHERE class_name = ?`,
+            [class_name],
+            function (err, result) {
+                if (err) {
+                    console.error("Error fetching data:", err.message);
+                    connection.end();
+                    reject(err);
+                    return;
+                }
+                console.log("Extraction successful:", result);
+                connection.end();
+                resolve(result);
+            }
+        );
+    });
 }
-
-
-
 
 function markAttendance(
     student_id,
@@ -40,3 +54,5 @@ function markAttendance(
         );
     });
 }
+
+module.exports = { fetchAttendanceData }

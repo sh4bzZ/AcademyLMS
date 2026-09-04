@@ -4,6 +4,7 @@ const login = require('./backend/routes/login.js');
 const adminLogin = require('./backend/routes/admin-login.js');
 const studentRegisteration = require('./backend/routes/register-students.js');
 const teacherRegisteration = require('./backend/routes/register-teachers.js');
+const fetchAttendance = require('./backend/routes/fetch-attendance.js')
 const sessionManager = require('./backend/auth/jwt.js');
 
 const cookieParser = require('cookie-parser');
@@ -29,6 +30,11 @@ app.use('/register-students',
     sessionManager.validateSession,
     studentRegisteration.routes
 );
+
+app.use('/fetch-attendance',
+    sessionManager.validateSession,
+    fetchAttendance.routes
+)
 
 //  Admin authenticated routes below
 app.use('/register-teachers', 

@@ -81,7 +81,6 @@ function setJWTCookie(res, token) {
     console.log(`Debug: setting cookie ${token}`)
 }
 
-
 module.exports = {
    assignJWT,
    checkIntegrity,

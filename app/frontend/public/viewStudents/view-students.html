@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>View Students</title>
+
+    <!-- + Add: Link the page stylesheet -->
+    <link rel="stylesheet" href="view-students.css">
+</head>
+
+<body>
+
+    <!-- + Add: Main page container -->
+    <main class="page-container">
+
+        <!-- + Add: Page header -->
+        <header class="page-header">
+            <p class="eyebrow">Student Management</p>
+
+            <h1>Students</h1>
+
+            <p class="subtitle">
+                View all registered students and their fee information.
+            </p>
+        </header>
+
+
+        <!-- + Add: Students table container -->
+        <section class="students-section">
+
+            <!-- + Add: Loading/status message -->
+            <div id="statusMessage" class="status-message">
+                Loading students...
+            </div>
+
+            <!-- + Add: Table wrapper -->
+            <div id="studentsTableContainer" class="table-container"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- + Add: Load the students JavaScript -->
+    <script src="view-students.js"></script>
+
+</body>
+
+</html>

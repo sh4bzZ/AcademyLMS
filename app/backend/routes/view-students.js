@@ -1,17 +1,16 @@
 const express = require('express');
 const routes = express.Router();
-const attendance = require('../students/attendance/attendanceHelper.js')
+const students = require('../admin/admin/adminHelper.js')
 
 routes.post('/', async (req, res) => {
-    // Student Details
-    const class_name = req.body.className;
     try {
-        const result = await attendance.fetchAttendanceData(class_name);
+        const result = await students.viewRegisteredStudents();
         res.status(200).json({
             success: true,
-            message: "Attendance data fetched successfully",
+            message: "Student data fetched successfully",
             data: result
         });
+        console.log(result);
     }
     catch (error) {
         console.error(error);

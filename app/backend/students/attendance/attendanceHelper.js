@@ -13,10 +13,11 @@ function fetchAttendanceData(class_name) {
                     connection.end();
                     reject(err);
                     return;
-                }
+                } else {
                 console.log("Extraction successful:", result);
                 connection.end();
                 resolve(result);
+                }
             }
         );
     });

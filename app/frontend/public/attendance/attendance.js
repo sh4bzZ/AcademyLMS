@@ -62,7 +62,11 @@ function createSubmitButton(className, students) {
             return {
                 student_id: String(student.student_id),
                 student_name: String(student.student_name),
-                status: selected ? selected.value : null
+
+                // + Convert "present" to 1 and "absent" to 0
+                status: selected
+                    ? (selected.value === 'present' ? 1 : 0)
+                    : null
             };
         });
 
@@ -73,7 +77,7 @@ function createSubmitButton(className, students) {
         }
 
         const body = {
-            class_id: String(className),
+            class_name: String(className),
             attendance: attendance
         };
 

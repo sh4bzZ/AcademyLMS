@@ -2,20 +2,15 @@ const express = require('express');
 const routes = express.Router();
 const attendance = require('../../backend/students/attendance/attendanceHelper.js')
 
-const express = require('express');
-const routes = express.Router();
-
-const attendance = require('../../backend/students/attendance/attendanceHelper.js');
-
-
 // + Add: Handle attendance submission.
-routes.post('/mark-attendance', async (req, res) => {
-
+routes.post('/', async (req, res) => {
     try {
-
         // + Read JSON sent by the frontend.
-        const { class_id, attendance: attendanceList } = req.body;
+        const { class_name, attendance: attendanceList } = req.body;
 
+        console.log('class_name received:', class_name);
+        console.log('Request body:', req.body);
+        
         // + Make sure attendance is an array.
         if (!Array.isArray(attendanceList)) {
             return res.status(400).json({
@@ -25,7 +20,7 @@ routes.post('/mark-attendance', async (req, res) => {
         }
 
         // + Make sure a class was provided.
-        if (!class_id) {
+        if (!class_name) {
             return res.status(400).json({
                 success: false,
                 message: 'Class ID is required.'
@@ -39,7 +34,8 @@ routes.post('/mark-attendance', async (req, res) => {
         for (const record of attendanceList) {
 
             // + Validate the attendance status.
-            if (!['present', 'absent'].includes(record.status)) {
+            // + Validate that attendance is either 1 or 0
+            if (record.status !== 1 && record.status !== 0) {
                 return res.status(400).json({
                     success: false,
                     message: 'Invalid attendance status.'
@@ -59,7 +55,8 @@ routes.post('/mark-attendance', async (req, res) => {
                 record.student_id,
                 record.student_name,
                 record.status,
-                date
+                date,
+                class_name
             );
         }
 

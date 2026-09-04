@@ -26,19 +26,21 @@ function markAttendance(
     student_id,
     student_name,
     attendance,
-    date // 2026-08-30 should be this format YYYY-MM-DD
+    date, // 2026-08-30 should be this format YYYY-MM-DD
+    class_name
 ){
     const connection = dbConnector.connectToDatabase();
     return new Promise((resolve, reject) => {
         connection.query(
             `INSERT INTO attendance
-            (student_id, student_name, attendance, date)
-            VALUES (?, ?, ?, ?)`,
+            (student_id, student_name, attendance, date, class_name)
+            VALUES (?, ?, ?, ?, ?)`,
             [
                 student_id,
                 student_name,
                 attendance,
-                date
+                date,
+                class_name
             ],
             function(err, result) {
                 if (err) {

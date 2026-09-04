@@ -4,7 +4,9 @@ const login = require('./backend/routes/login.js');
 const adminLogin = require('./backend/routes/admin-login.js');
 const studentRegisteration = require('./backend/routes/register-students.js');
 const teacherRegisteration = require('./backend/routes/register-teachers.js');
-const fetchAttendance = require('./backend/routes/fetch-attendance.js')
+const fetchAttendance = require('./backend/routes/fetch-attendance.js');
+const markAttendance = require('./backend/routes/mark-attendance.js');
+
 const sessionManager = require('./backend/auth/jwt.js');
 
 const cookieParser = require('cookie-parser');
@@ -14,6 +16,7 @@ const path = require('path');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 
 app.use(express.static(
     path.join(__dirname, 'frontend', 'public')
@@ -34,6 +37,11 @@ app.use('/register-students',
 app.use('/fetch-attendance',
     sessionManager.validateSession,
     fetchAttendance.routes
+)
+
+app.use('/mark-attendance',
+    sessionManager.validateSession,
+    markAttendance.routes
 )
 
 //  Admin authenticated routes below

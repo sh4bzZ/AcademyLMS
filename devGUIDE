@@ -86,7 +86,7 @@ CREATE TABLE attendance (
 
 
 ------------
-npm install mysql
+npm install mysql2
 
 npm install express
 
@@ -109,18 +109,12 @@ VALUES (
 );
 
 -----------
-
-npm uninstall mysql
-npm install mysql2
-
------------
-
 create second account, cause mysql recognizes user with same name, coming from a different IP as different user
 
 CREATE USER 'academyUser'@'172.17.0.1'
 IDENTIFIED BY 'academyPass';
 
-GRANT INSERT, SELECT, DELETE ON academyDatabase.* TO 'academyUser'@'172.17.0.1';
+GRANT INSERT, SELECT, UPDATE, DELETE ON academyDatabase.* TO 'academyUser'@'172.17.0.1';
 
 -----------
 

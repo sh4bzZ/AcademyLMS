@@ -1,11 +1,13 @@
 const dbConnector = require("../../sql/connectDb.js")
 
+
+// This is supposed to fetch the students from a certain class
 function fetchAttendanceData(class_name) {
     const connection = dbConnector.connectToDatabase();
 
     return new Promise((resolve, reject) => {
         connection.query(
-            `SELECT DISTINCT student_id, student_name FROM attendance WHERE class_name = ?`,
+            `SELECT DISTINCT id, name FROM students WHERE class = ?`,
             [class_name],
             function (err, result) {
                 if (err) {

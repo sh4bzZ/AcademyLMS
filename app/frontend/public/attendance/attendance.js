@@ -10,36 +10,39 @@ function fetchAttendanceData(className) {
         body: data,
         credentials: 'include'
     })
-    .then(response => {
+        .then(response => {
 
-        // + Check whether the HTTP request succeeded
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
-        }
+            // + Check whether the HTTP request succeeded
+            if (!response.ok) {
+                throw new Error(`HTTP error: ${response.status}`);
+            }
 
-        return response.json();
-    })
-    .then(result => {
+            return response.json();
+        })
+        .then(result => {
 
-        // + Get the data returned by Express
-        const students = result.data;
+            // + Get the data returned by Express
+            const students = result.data;
 
-        console.log(students);
+            console.log('Students received:', students);
 
-        // + Return students to createTableFromAttendanceData()
-        return students;
-    })
-    .catch(error => {
-        console.error('Error:', error);
+            // + Return students to createTableFromAttendanceData()
+            return students;
+        })
+        .catch(error => {
+            console.error('Error:', error);
 
-        // + Re-throw the error so the table function knows the request failed
-        throw error;
-    });
+            // + Re-throw the error so the table function knows the request failed
+            throw error;
+        });
 }
 
+
 //
 //
 //
+//
+
 
 function createSubmitButton(className, students) {
 
@@ -56,12 +59,12 @@ function createSubmitButton(className, students) {
         const attendance = students.map(student => {
 
             const selected = document.querySelector(
-                `input[name="attendance_${CSS.escape(String(student.student_id))}"]:checked`
+                `input[name="attendance_${CSS.escape(String(student.id))}"]:checked`
             );
 
             return {
-                student_id: String(student.student_id),
-                student_name: String(student.student_name),
+                student_id: String(student.id),
+                student_name: String(student.name),
 
                 // + Convert "present" to 1 and "absent" to 0
                 status: selected
@@ -70,7 +73,7 @@ function createSubmitButton(className, students) {
             };
         });
 
-        // Check that every student has been marked.
+        // + Check that every student has been marked
         if (attendance.some(record => record.status === null)) {
             alert('Please mark attendance for every student.');
             return;
@@ -125,6 +128,7 @@ function createSubmitButton(className, students) {
 //
 //
 //
+//
 
 
 function createTableFromAttendanceData() {
@@ -159,8 +163,8 @@ function createTableFromAttendanceData() {
     fetchAttendanceData(className)
         .then(students => {
 
-            // + Convert the returned object into an array
-            const studentList = Object.values(students);
+            // + Server already returns an array
+            const studentList = students;
 
             // + Clear the loading message
             container.replaceChildren();
@@ -248,14 +252,14 @@ function createTableFromAttendanceData() {
                 const idCell = document.createElement('td');
 
                 // + Treat student ID as plain text
-                idCell.textContent = String(student.student_id);
+                idCell.textContent = String(student.id);
 
 
                 // + Create student name cell
                 const nameCell = document.createElement('td');
 
                 // + Treat student name as plain text to prevent XSS
-                nameCell.textContent = String(student.student_name);
+                nameCell.textContent = String(student.name);
 
 
                 // + Create attendance cell
@@ -273,8 +277,11 @@ function createTableFromAttendanceData() {
                 const presentInput = document.createElement('input');
 
                 presentInput.type = 'radio';
+
+                // + Use student.id because that is what the server returns
                 presentInput.name =
-                    `attendance_${String(student.student_id)}`;
+                    `attendance_${String(student.id)}`;
+
                 presentInput.value = 'present';
 
                 presentLabel.appendChild(presentInput);
@@ -289,8 +296,11 @@ function createTableFromAttendanceData() {
                 const absentInput = document.createElement('input');
 
                 absentInput.type = 'radio';
+
+                // + Use the same student.id for the radio group
                 absentInput.name =
-                    `attendance_${String(student.student_id)}`;
+                    `attendance_${String(student.id)}`;
+
                 absentInput.value = 'absent';
 
                 absentLabel.appendChild(absentInput);

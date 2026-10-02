@@ -17,7 +17,7 @@ routes.post('/', async (req, res)=> {
     const quran_fees = req.body.quran_fees || 0;
 
     try {
-        const result = await registeration.registerStudent(
+        const result = await registeration.updateStudent(
             name, age,
             id, classGrade,
             math_fees, physics_fees,
@@ -29,7 +29,7 @@ routes.post('/', async (req, res)=> {
         if (result.affectedRows === 1){
             res.status(200).send(`
                 <script>
-                    alert("Registered Student Successfully");
+                    alert("Updated Student Successfully");
                     window.location.href = "/viewStudents/view-students.html";
                 </script>
             `);
@@ -37,7 +37,7 @@ routes.post('/', async (req, res)=> {
             res.status(500).send(`
                 <script>
                     alert("Unknown Error Occured, Please contact the developer");
-                    window.location.href = "/registerStudents/register-students.html";
+                    window.location.href = "/viewStudents/view-students.html";
                 </script>
                 `);
         }

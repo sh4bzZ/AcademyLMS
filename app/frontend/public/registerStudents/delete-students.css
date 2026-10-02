@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+}
+
+.page-container {
+    width: min(1400px, 94%);
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.delete-section,
+.students-section {
+    background: #ffffff;
+    border: 1px solid #e6eaf0;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(20, 30, 50, 0.05);
+}
+
+.delete-section {
+    padding: 35px;
+    margin-bottom: 30px;
+}
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #d92d20;
+}
+
+.page-header h1 {
+    margin-bottom: 10px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+}
+
+.subtitle {
+    color: #667085;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.delete-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    gap: 10px;
+}
+
+.delete-form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.delete-form input {
+    padding: 13px 14px;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #172033;
+    font-size: 1rem;
+}
+
+.delete-form input:focus {
+    outline: none;
+    border-color: #d92d20;
+}
+
+.delete-form button {
+    margin-top: 8px;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #d92d20;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.delete-form button:hover {
+    background: #b42318;
+}
+
+.students-section {
+    padding: 30px;
+}
+
+.students-section h2 {
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+}
+
+.iframe-description {
+    margin-bottom: 20px;
+    color: #667085;
+}
+
+.students-frame {
+    display: block;
+    width: 100%;
+    height: 650px;
+    border: 1px solid #e6eaf0;
+    border-radius: 12px;
+    background: #f4f7fb;
+}
+
+@media (max-width: 700px) {
+
+    .page-container {
+        width: 94%;
+        padding: 30px 0;
+    }
+
+    .delete-section,
+    .students-section {
+        padding: 22px;
+        border-radius: 14px;
+    }
+
+    .students-frame {
+        height: 550px;
+    }
+}

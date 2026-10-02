@@ -10,6 +10,8 @@ const viewStudents = require('./backend/routes/view-students.js');
 const viewTeachers = require('./backend/routes/view-teachers.js');
 const teacher = require('./backend/routes/update-tpassword.js');
 const viewAttendance = require('./backend/routes/view-attendance.js');
+const deleteStudent = require('./backend/routes/delete-student.js');
+const updateStudent = require('./backend/routes/update-student.js')
 
 const sessionManager = require('./backend/auth/jwt.js');
 
@@ -72,6 +74,16 @@ app.use('/view-teachers',
 app.use('/update-tpassword',
     sessionManager.validateAdminSession,
     teacher.routes
+)
+
+app.use('/delete-student',
+    sessionManager.validateAdminSession,
+    deleteStudent.routes
+)
+
+app.use('/update-student',
+    sessionManager.validateAdminSession,
+    updateStudent.routes
 )
 
 app.get('/', (req, res) => {

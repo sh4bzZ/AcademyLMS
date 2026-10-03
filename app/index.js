@@ -34,27 +34,9 @@ app.use(cookieParser());
 app.use('/login', login.routes);
 app.use('/admin-login', adminLogin.routes);
 
-// Authenticated routes below
-app.use('/register-students',
-    sessionManager.validateSession,
-    studentRegisteration.routes
-);
+// Teacher Authenticated routes below
 
-app.use('/view-students', 
-    sessionManager.validateSession,
-    viewStudents.routes
-);
-
-app.use('/delete-student',
-    sessionManager.validateSession,
-    deleteStudent.routes
-)
-
-app.use('/update-student',
-    sessionManager.validateSession,
-    updateStudent.routes
-)
-
+// ---
 app.use('/fetch-attendance',
     sessionManager.validateSession,
     fetchAttendance.routes
@@ -72,6 +54,27 @@ app.use('/view-attendance',
 )
 
 //  Admin authenticated routes below
+
+app.use('/register-students',
+    sessionManager.validateAdminSession,
+    studentRegisteration.routes
+);
+
+app.use('/view-students', 
+    sessionManager.validateAdminSession,
+    viewStudents.routes
+);
+
+app.use('/delete-student',
+    sessionManager.validateAdminSession,
+    deleteStudent.routes
+)
+
+app.use('/update-student',
+    sessionManager.validateAdminSession,
+    updateStudent.routes
+)
+
 app.use('/register-teachers', 
     sessionManager.validateAdminSession,
     teacherRegisteration.routes

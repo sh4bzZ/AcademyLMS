@@ -40,6 +40,11 @@ app.use('/register-students',
     studentRegisteration.routes
 );
 
+app.use('/view-students', 
+    sessionManager.validateSession,
+    viewStudents.routes
+);
+
 app.use('/delete-student',
     sessionManager.validateSession,
     deleteStudent.routes
@@ -55,6 +60,7 @@ app.use('/fetch-attendance',
     fetchAttendance.routes
 )
 
+
 app.use('/mark-attendance',
     sessionManager.validateSession,
     markAttendance.routes
@@ -69,11 +75,6 @@ app.use('/view-attendance',
 app.use('/register-teachers', 
     sessionManager.validateAdminSession,
     teacherRegisteration.routes
-);
-
-app.use('/view-students', 
-    sessionManager.validateAdminSession,
-    viewStudents.routes
 );
 
 app.use('/view-teachers',

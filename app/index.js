@@ -40,6 +40,16 @@ app.use('/register-students',
     studentRegisteration.routes
 );
 
+app.use('/delete-student',
+    sessionManager.validateSession,
+    deleteStudent.routes
+)
+
+app.use('/update-student',
+    sessionManager.validateSession,
+    updateStudent.routes
+)
+
 app.use('/fetch-attendance',
     sessionManager.validateSession,
     fetchAttendance.routes
@@ -76,15 +86,6 @@ app.use('/update-tpassword',
     teacher.routes
 )
 
-app.use('/delete-student',
-    sessionManager.validateAdminSession,
-    deleteStudent.routes
-)
-
-app.use('/update-student',
-    sessionManager.validateAdminSession,
-    updateStudent.routes
-)
 
 app.get('/', (req, res) => {
     res.redirect('/login/login.html');
